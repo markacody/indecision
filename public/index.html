@@ -9,8 +9,14 @@
 
 
     <div id="app"></div>
+<!--
+   Use these CDNs if not using webpack
     <script src="https:///unpkg.com/react@16.0.0/umd/react.development.js"></script>
    <script src="https:///unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
-    <script src="/scripts/app.js"></script>
+   Specify the path to your app, if using Babel insteal of webpack to compile.
+   <script src="/scripts/app.js"></script>
+--> 
+<!--Reference your webpack output file-->
+<script src="/bundle.js"></script>
 </body>
 </html>
