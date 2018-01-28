@@ -1,14 +1,16 @@
 import React from 'react';
 
 export default class AddOption extends React.Component {
-    constructor(props) {
-        super(props);
-        this.addOption = this.addOption.bind(this);
-        this.state = {
-          error: undefined  
-        };
-    }
-    addOption(e) {
+    state = {
+      error: undefined  
+    };
+//Without the Babel plug-in, event handlers would have to be this-bound to the parent class using the syntax below.
+//    constructor(props) {
+//        super(props);
+//        this.addOption = this.addOption.bind(this);
+//    }
+//...and the event handler would not be an arrow function, just name (){}...
+    addOption = (e) => {
         e.preventDefault();
         
         const option = e.target.elements.option.value.trim();
@@ -22,7 +24,7 @@ export default class AddOption extends React.Component {
         if (!error) {
             e.target.elements.option.value = '';
         }
-    }
+    };
     render() {
         return (
             <div>
@@ -33,7 +35,7 @@ export default class AddOption extends React.Component {
                     <button>Add Option</button>
                 </form>
             </div>
-        )
+        );
     }
 }
 
