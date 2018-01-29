@@ -1,0 +1,17 @@
+.header {
+    background: $off-black;
+    color: $off-white;
+    
+    padding: $m-size 0 $s-size 0;
+}
+//BEM Block Element Modifer Naming Convention
+.header__title {
+    font-size: $dbl-size;
+    margin: 0;
+}
+.header__subtitle {
+    font-size: $m-size;
+    color: $light-blue;
+    font-weight: 500;
+    margin: $s-size 0 0 0;
+}

@@ -2,12 +2,12 @@ import React from 'react';
 
 const Action = (props) => {
         return (
-            <div>
-                <button 
+            <div className="widget__wizard">
+                <button className="big-button" 
                     onClick={props.chooseOption}
                     disabled={!props.hasOptions}
                 >
-                    2. What should I do?
+                    Ask the wizard what to do!
                 </button>
             </div>
         )

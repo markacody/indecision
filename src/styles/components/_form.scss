@@ -1,0 +1,36 @@
+//Default for all devices assuming mobile first
+
+.add-option-error {
+    color: aliceblue;
+    font-style: italic;
+    padding: 0 $m-size;
+    margin: $m-size 0 0 0;
+}
+
+.add-option {
+    display: flex;
+    flex-direction: column;
+    padding: $s-size;
+    
+}
+
+.add-option__input {
+    background: lighten($body-blue, 5%);
+    border: none;
+    color: $off-white;
+    border-bottom: .3rem solid darken($body-blue, 10%);
+    flex-grow: 1;
+    margin: 0;
+    //margin-right: $s-size;
+    padding: $s-size;
+}
+
+//Do not stack form fields in large devices
+@media (min-width: $desktop-breakpoint) {
+    .add-option {
+        flex-direction: row;
+    }
+    .add-option__input {
+        margin: 0 $s-size 0 0;
+    }
+}

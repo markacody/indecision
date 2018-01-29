@@ -5,18 +5,23 @@ import Option from './Option';
 const Options = (props) => {
     return (
         <div>
-            <p>Your Options</p>
-            {props.options.length === 0 && <p>Please add your options above to get started.</p>}
-            {
-                    props.options.map((option) =>
-                    <Option 
-                        key={option} 
-                        optionText={option}
-                        deleteOption={props.deleteOption}
-                    />
-                )   
-            }
-            <button onClick={props.deleteOptions}>Remove All</button>
+           <div className="widget-header">
+                <h4 className="widget-header__title">Your list of options</h4>
+                <button className="button button--link" onClick={props.deleteOptions}>Remove All</button>
+            </div>
+            <div>
+                {props.options.length === 0 && <p className="widget__message">Please add your options above to get started.</p>}
+                {
+                        props.options.map((option, index) =>
+                        <Option 
+                            key={option} 
+                            optionText={option}
+                            count={index + 1}
+                            deleteOption={props.deleteOption}
+                        />
+                    )   
+                }
+            </div>
         </div>
     )
 };

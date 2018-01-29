@@ -8,11 +8,15 @@ const OptionModal = (props) => (
             //Better usability for closing modal with ESC or by clicking outside of target area.
             onRequestClose={props.clearOption}
             //Required for better accessibility
-            contentLabel="Selected Option"   
+            contentLabel="Selected Option"  
+            //Required to transition out 
+            closeTimeoutMS={400}
+            //Required to apply own styles
+            className="modal"
         >
-            <h3>Selected Option</h3>
-            {props.selectedOption && <p>{props.selectedOption}</p>}
-            <button onClick={props.clearOption}>Okay</button>
+            <h3 className="modal__title">Selected Option</h3>
+            {props.selectedOption && <p className="modal__body">{props.selectedOption}</p>}
+            <button className="button" onClick={props.clearOption}>Okay</button>
         </Modal>
 );
 
